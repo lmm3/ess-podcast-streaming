@@ -5,7 +5,7 @@ const fs = require('fs')
 const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
-const podcastsFilePath = './podcasts.json'
+const podcastsFilePath = './samples/podcasts.json'
 
 require('./podcasts')(app);
 
