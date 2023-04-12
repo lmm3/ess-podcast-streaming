@@ -1,21 +1,13 @@
 import React from 'react';
 import {
   Box,
-  IconButton,
-  useBreakpointValue,
   Stack,
   Heading,
-  Text,
   Container,
   Link,
   SimpleGrid,
 } from '@chakra-ui/react';
-// Here we have used react-icons package for the icons
-import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
-// And react-slick as our Carousel Lib
-import Slider from 'react-slick';
-import { stringify } from 'querystring';
-//import { Link } from 'react-router-dom';
+
 type Card = {
   title: string;
   image: string
@@ -23,19 +15,6 @@ type Card = {
 let cardsPolitics:Card[] = []
 let cardsEconomy:Card[] = []
 
-
-// Settings for the slider
-const settings = {
-  dots: true,
-  arrows: false,
-  fade: true,
-  infinite: true,
-  autoplay: false,
-  speed: 500,
-  autoplaySpeed: 5000,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-};
 
 async function getPolitics(){
   const response = await fetch('http://127.0.0.1:4000/podcasts/politics');
@@ -62,24 +41,11 @@ async function getEconomy(){
 
 getPolitics();
 getEconomy();
-//fetch('http://127.0.0.1:4000/podcasts/politics')
-//.then(response => response.json())
-//.then(json => console.log(json))
-//.catch(err => console.log(err));
 
 console.log(cardsEconomy)
 console.log(cardsPolitics)
 
 export default function CaptionCarousel() {
-    // As we have used custom buttons, we need a reference variable to
-    // change the state
-    const [slider, setSlider] = React.useState<Slider | null>(null);
-  
-    // These are the breakpoints which changes the position of the
-    // buttons as the screen size changes
-    const top = useBreakpointValue({ base: '90%', md: '50%' });
-    const side = useBreakpointValue({ base: '30%', md: '40px' });
-
 
     return (
       <Heading>
