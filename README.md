@@ -1,6 +1,10 @@
 # Podcast Streaming App  
   
-Será criada uma app que permita o usuário adicionar e ouvir podcasts.
+O Podshare é uma aplicação web desenvolvida utilizando `React`, `Node.js`, `Javascript`, `TypeScript`, dentre outras bibliotecas, frameworks e linguagens de programação. Com este app é possível adicionar, assistir e gerenciar seus podcasts favoritos, além de poder se conectar com seus amigos.  
+  
+> OBS: este é um projeto de cunho acadêmico. O Podshare criado por esta equipe é uma empresa fictícia.  
+  
+###### 11 de Abril de 2023
 
 <details><summary> Equipe </summary>
 
@@ -22,25 +26,25 @@ Romildo Juliano de Almeida Lira | romildojuliano | rjal@cin.ufpe.br
 
 ### Front-end
 
-- React
-- JavaScript e TypeScript
-- Chakra-ui
-- Figma
+- `React`
+- `JavaScript` e `TypeScript`
+- `Chakra-ui`
+- `Figma`
 
 ### Back-end
 
-- Node.js
-- Express
-- Mocha
-- JSON
+- `Node.js`
+- `Express`
+- `Mocha`
+- `JSON`
 
 ### Testes
 
-- Cucumber
-- Supertest
-- Protractor
-- Selenium
-- Webdriver Manager
+- `Cucumber`
+- `Supertest`
+- `Protractor`
+- `Selenium`
+- `Webdriver Manager`
 
 </details>
 
@@ -56,7 +60,7 @@ sudo apt install npm
 
 ```
 sudo npm install -g n
-n 14.15
+n 14.20
 ```
 
 ### Instalando pendências dentro das pastas
