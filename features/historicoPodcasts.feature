@@ -20,3 +20,25 @@ Feature: Which podcasts the user listened
 	Given I'm on "History" page
 	When I select the date i want
 	Then I see all podcasts listened before the date
+
+Feature: View the history filtered by a date
+    As an user that clicked at history button
+    I choosed a date to use as a filter
+    I can see the history page with the podcasts listened before the filter.
+
+Scenario: As an user, i saw a few podcasts filtered in the "history" page
+    Given I logged in as "ramonwanderley"
+    And I saw "podciencia" and "podpolitica" before the date "2023-03-28"
+    When I navigate to the "history" page
+    And I choosed "2023-03-28" as a date to use as a filter
+    Then I can see 'status' : 200
+    And  I can see the the number of podcasts listened before the date
+    And I can see "podciencia" and "podpolitica" in the page.
+
+Scenario: As an user, i can't see any podcasts filtered in the "history" page
+    Given I logged in as "romildojuliano"
+    And i didn't see any podcast before the date "2023-03-28"
+    When I navigate to the "history" page
+    And I choosed "2023-03-28" as a date to use as a filter
+    Then I can see 'status' : 200
+    And I see a message "Ainda não ouviu nenhum podcast".
