@@ -25,6 +25,7 @@ Scenario: Pesquisa utilizando apenas parte do nome do usuário
     Then Um lista "Resultados da sua pesquisa" é mostrada 
     Then Contém os valores "lmm3" e "lmm4"
 
+
 Scenario: Pesquisar todos os usuários
     Given Estou na página "Home"
     Given Os usuários "ramonwanderley", "romildojuliano", "mattvie", "lmm3", "lmm4", "joaovictorbelo", "HACardoso" e "LuanCavalcanti07" estão cadastrados na plataforma
