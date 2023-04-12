@@ -16,10 +16,11 @@ import {
   useDisclosure,
   useColorModeValue,
   Image,
-  Input
+  Input,
+  Icon
 } from '@chakra-ui/react';
 
-import { AddIcon } from '@chakra-ui/icons';
+import { AddIcon, LockIcon } from '@chakra-ui/icons';
 
 import Router from "../Router"
 import { useNavigate } from 'react-router-dom';
@@ -40,12 +41,14 @@ const NavBarPageButton = {
 type NavProps = {
   href: string,
   children: ReactNode
+  id: string,
 }
 
 const NavLink = (props: NavProps) => (
   <Link
     px={2}
     py={1}
+    id={props.id}
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
@@ -110,7 +113,7 @@ export default function Navbar() {
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
               {Links.map((link, index) => (
-                <NavLink {...NavBarPageButton}  key={link.nome} href={link.href}>
+                <NavLink {...NavBarPageButton} id={link.nome} key={link.nome} href={link.href}>
                   {React.createElement(IconLinks[index])}
                   <br/>
                   {link.nome}
@@ -140,7 +143,13 @@ export default function Navbar() {
                 <MenuItem>Teste</MenuItem>
                 <MenuDivider />
                 <MenuItem>Teste</MenuItem>
+                <Box>
+                  
+                </Box>
+                <LockIcon />
+                <Link textColor="black" href="/login" onClick={(e) => {localStorage.setItem("user", ""); window.location.reload()}}> Sair</Link>
               </MenuList>
+              
             </Menu>
           </Flex>
         </Flex>
@@ -154,6 +163,7 @@ export default function Navbar() {
              </NavLink>
               ))}
             </Stack> */}
+            
           </Box>
         ) : null}
       </Box>

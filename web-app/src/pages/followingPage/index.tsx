@@ -7,13 +7,11 @@ import {
   Link,
 } from '@chakra-ui/react';
 import pfp from '../../styles/assets/nopfp.png'
+import { FollowingUser } from "../../models/FollowingUser";
 
-interface IUser {
-  following: string[];
-}
 
 export default function UserPage(){
-  const [userData, setUserData] = useState<IUser>({
+  const [userData, setUserData] = useState<FollowingUser>({
     following: []
   });
   const [loggedUser, setLoggedUser] = useState('')
@@ -42,7 +40,7 @@ export default function UserPage(){
           <Flex justifyContent="space-between" alignItems="center" flexDir="row" color="white" w="50vw" margin="15px" padding="10px 20px" borderRadius="20px" bgColor="#30332D">
             <Flex w="fit-content">
               <Image src={pfp} alt="profile pic" boxSize="36px" objectFit="cover"/>
-              <Heading marginLeft="10px" >{user}</Heading>
+              <Heading className="users" marginLeft="10px" >{user}</Heading>
             </Flex>
             <Link href={`http://localhost:3000/user/${user}`}>Ver usuario</Link>
           </Flex>

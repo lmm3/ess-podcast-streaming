@@ -37,7 +37,6 @@ function Router() {
       <Navbar />
       <Routes>
         {/*adicionem aqui as rotas das paginas */}
-        <Route path="/" element={<Navigate to="/" />} /> 
         <Route path="/" element={<Home />} />
         <Route path="/user/:username" element={<UserPage />} />
         <Route path="/podcast/:podcast" element={<PodcastPage />} />
