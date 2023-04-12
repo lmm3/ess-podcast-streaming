@@ -148,4 +148,4 @@ defineSupportCode( function({ registerHandler, Given, When, Then}){
             const expectedMessage = "Ainda não ouviu nenhum podcast";       //o certo seria pegar do front, mas a implementação foi realizada apenas com o history.js
             await expect(expectedMessage).to.eventually.equal(message); 
         });
-})
+})*/
